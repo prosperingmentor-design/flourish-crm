@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flourish Coaching CRM</titl
+<title>Flourish Coaching CRM</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1053,7 +1053,7 @@ const WORKER_URL = 'https://coaching-crm-relay.prosperingmentor.workers.dev';
 
 function checkUrlWebhook(){ /* legacy stub — polling handles real calls now */ }
 
-async function pollWorker(){
+async function fetchNow(){   const btn=document.getElementById('fetch-now-btn');   btn.textContent='Fetching...';btn.disabled=true;   await pollWorker();   btn.textContent='✓ Done';   setTimeout(()=>{btn.textContent='🔄 Fetch Calls Now';btn.disabled=false;},2000);   switchIntegTab('log');renderActivityLog(); } async function pollWorker(){
   try {
     const res = await fetch(WORKER_URL+'/poll');
     if(!res.ok) return;
